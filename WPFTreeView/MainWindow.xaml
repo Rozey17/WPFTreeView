@@ -15,7 +15,7 @@
                         <Setter.Value>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Width="20" Margin="3"
+                                    <Image Width="30" Margin="3"
                                            Source="{Binding 
                                                 RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}},
                                                 Path=Tag,
