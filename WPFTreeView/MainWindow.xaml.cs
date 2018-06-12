@@ -21,11 +21,15 @@ namespace WPFTreeView
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Constructor
         public MainWindow()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region On Loaded
+        
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Get every logical drive on the machine
@@ -51,11 +55,13 @@ namespace WPFTreeView
                 FolderView.Items.Add(item);
             }
         }
+        #endregion
 
+        #region Folder Expanded
         private void Folder_Expanded(object sender, RoutedEventArgs e)
         {
             #region Checks
-
+            
             var item = (TreeViewItem)sender;
 
             // If the item only contains the dummy data
@@ -141,10 +147,13 @@ namespace WPFTreeView
 
                 //Add this item to the parent
                 item.Items.Add(subItem);
-            });           
+            });
+            #endregion
+
         }
         #endregion
 
+        #region Helpers
         public static string GetFileFolderName(string path)
         {
             // C : \Something\a file
@@ -163,7 +172,6 @@ namespace WPFTreeView
             // If we don't find a back slash return the path itself
             return path.Substring(lastIndex + 1);
         }
-
-        
+        #endregion
     }
 }
